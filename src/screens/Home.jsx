@@ -124,91 +124,44 @@ const Homepage = () => {
       
       <div className="min-h-screen bg-white">
         {/* Enhanced Hero Section */}
-        <section ref={heroRef} className="relative min-h-screen bg-white text-gray-900 overflow-hidden">
-          {/* Animated Background Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-orange-500/5 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-900/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
-            <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gray-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '4s'}}></div>
-          </div>
+      <section className="relative min-h-screen bg-gray-900 text-white overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"
+        }}
+      ></div>
+      
+      {/* Dark Overlay for Text Readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/45 to-black/50"></div>
+      
+      {/* Content */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center min-h-screen">
+        <div className="max-w-4xl">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-5xl md:text-7xl font-bold mb-2 leading-tight -mt-5"
+          >
+            <span className="text-white">Precision Meets</span>
+            <div className="text-orange-500 -mt-4">Innovation</div>
+          </motion.h1>
           
-          {/* Grid Pattern Overlay */}
-          <div className="absolute inset-0 opacity-10" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,0,0,0.1) 1px, transparent 0)`,
-            backgroundSize: '50px 50px'
-          }}></div>
+          <motion.p 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-2xl mb-2 leading-relaxed text-gray-200 max-w-3xl"
+          >
+            Transform your construction bidding with AI-powered cost estimates. Our certified professionals deliver accuracy, speed, and competitive advantage for every project.
+          </motion.p>
           
-          {/* Hero Background Image */}
-          <div className="absolute inset-0 opacity-10">
-            <img 
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&h=1080&fit=crop" 
-              alt="Construction site" 
-              className="w-full h-full object-cover"
-            />
-          </div>
           
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-white/70"></div>
-          
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center min-h-screen">
-            <div className="max-w-4xl">
-  
-              
-              <motion.h1 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-5xl md:text-7xl font-bold mb-2 leading-tight text-gray-900"
-              >
-                Precision Meets
-                <div className="text-orange-500 -mt-5"> Innovation</div>
-              </motion.h1>
-              
-              <motion.p 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-xl md:text-2xl mb-4 leading-relaxed text-gray-600 max-w-3xl"
-              >
-                Transform your construction bidding with AI-powered cost estimates. Our certified professionals deliver accuracy, speed, and competitive advantage for every project.
-              </motion.p>
-              
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-4"
-              >
-                <button className="group relative px-8 py-4 bg-orange-500 rounded-xl font-semibold text-white overflow-hidden transition-all hover:shadow-lg hover:shadow-orange-500/25 hover:scale-105">
-                  <span className="relative z-10">Request Free Quote</span>
-                  <div className="absolute inset-0 bg-orange-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </button>
-                <button className="group px-8 py-4 border-2 border-blue-900 text-blue-900 rounded-xl font-semibold hover:bg-blue-900 hover:text-white transition-all hover:shadow-lg">
-                  View Sample Estimate
-                  <ArrowRight className="inline-block h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </motion.div>
-            </div>
-            
-            {/* Floating Elements */}
-            <motion.div
-              className="absolute top-20 right-20 hidden lg:block"
-              animate={{ y: [-10, 10, -10] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className="w-16 h-16 bg-orange-500/20 rounded-full blur-sm"></div>
-            </motion.div>
-            
-            <motion.div
-              className="absolute bottom-40 right-40 hidden lg:block"
-              animate={{ y: [10, -10, 10] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className="w-12 h-12 bg-blue-900/20 rounded-full blur-sm"></div>
-            </motion.div>
-          </div>
-        </section>
-
+        </div>
+      </div>
+    </section>
         {/* Stats Section */}
         <section className="py-16 bg-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -358,15 +311,7 @@ const Homepage = () => {
                       ))}
                     </motion.div>
                     
-                    <motion.button
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 1.0 }}
-                      className="group flex items-center text-orange-500 font-semibold text-lg hover:text-orange-600 transition-colors"
-                    >
-                      Learn More 
-                      <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-2 transition-transform" />
-                    </motion.button>
+                 
                   </motion.div>
                 </motion.div>
               );
