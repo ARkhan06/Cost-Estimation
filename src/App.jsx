@@ -7,7 +7,7 @@ import EarthworkPage from './screens/Earthwork';
 import PaintingPage from './screens/painting';
 import ConcretePage from './screens/concrete';
 import InsulationPage from './screens/insulation';
-import InteriorFinishesPage from './screens/interior-finishes'; // ✅ Added this import
+import InteriorFinishesPage from './screens/interior-finishes';
 import DemolitionPage from './screens/demolition';
 import MasonryPage from './screens/masonry';
 import FinishesPage from './screens/finishes';
@@ -21,7 +21,11 @@ import FlooringPage from './screens/flooring';
 import PBE from './screens/PBE.jsx';
 import CBE from './screens/CBE.jsx';
 import RBE from './screens/RBE.jsx';
+import About from './screens/About.jsx';
+import ManufacturersPage from './screens/Manufacturers.jsx';
+import Contact from './screens/Contact.jsx';
 import Footer from './components/Footer';
+import './App.css';
 
 const App = () => {
   return (
@@ -37,7 +41,7 @@ const App = () => {
           <Route path="/framing" element={<FramingPage />} />
           <Route path="/flooring" element={<FlooringPage />} />
           <Route path="/masonry" element={<MasonryPage />} />
-          <Route path="/interior-finishes" element={<InteriorFinishesPage />} /> {/* ✅ Added this route */}
+          <Route path="/interior-finishes" element={<InteriorFinishesPage />} />
           <Route path="/demolition" element={<DemolitionPage />} />
           <Route path="/furnishing" element={<FurnishingPage />} />
           <Route path="/roofing" element={<RoofingPage />} />
@@ -50,19 +54,12 @@ const App = () => {
           <Route path="/public-bids" element={<PBE />} />
           <Route path="/commercial-bids" element={<CBE />} />
           <Route path="/residential-bids" element={<RBE />} />
-          <Route path="/about" element={
-            <div className="min-h-screen flex items-center justify-center">
-              <h1 className="text-4xl">About Page Coming Soon</h1>
-            </div>
-          } />
+          <Route path="/manufacturers" element={<ManufacturersPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={
             <div className="min-h-screen flex items-center justify-center">
               <h1 className="text-4xl">Projects Page Coming Soon</h1>
-            </div>
-          } />
-          <Route path="/contact" element={
-            <div className="min-h-screen flex items-center justify-center">
-              <h1 className="text-4xl">Contact Page Coming Soon</h1>
             </div>
           } />
         </Routes>
