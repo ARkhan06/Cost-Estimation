@@ -35,7 +35,9 @@ const Navbar = () => {
       { name: 'Commercial Bids Estimates', path: '/commercial-bids' },
       { name: 'Residential Bids Estimates', path: '/residential-bids' }
     ],
-    'Manufacturers': []
+    'Manufacturers': [
+      {name: 'Manufacturers', path:'/manufacturers'}
+    ]
   };
 
   return (
@@ -56,26 +58,9 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-10">
-            <Link 
-              to="/" 
-              className={`font-medium transition-colors ${
-                location.pathname === '/' ? 'text-orange-500' : 'text-gray-700 hover:text-orange-500'
-              }`}
-            >
-              Home
-            </Link>
-            <Link 
-              to="/about" 
-              className={`font-medium transition-colors ${
-                location.pathname === '/about' ? 'text-orange-500' : 'text-gray-700 hover:text-orange-500'
-              }`}
-            >
-              About
-            </Link>
-            
-            {/* Services Dropdown */}
-            <div 
+          
+          <div className="hidden lg:flex items-center space-x-10 mr-20">
+               <div 
               className="relative"
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
@@ -176,15 +161,27 @@ const Navbar = () => {
                 )}
               </AnimatePresence>
             </div>
-
             <Link 
-              to="/projects" 
+              to="/" 
               className={`font-medium transition-colors ${
-                location.pathname === '/projects' ? 'text-orange-500' : 'text-gray-700 hover:text-orange-500'
+                location.pathname === '/' ? 'text-orange-500' : 'text-gray-700 hover:text-orange-500'
               }`}
             >
-              Projects
+              Home
             </Link>
+            <Link 
+              to="/about" 
+              className={`font-medium transition-colors ${
+                location.pathname === '/about' ? 'text-orange-500' : 'text-gray-700 hover:text-orange-500'
+              }`}
+            >
+              About
+            </Link>
+            
+            {/* Services Dropdown */}
+         
+
+           
             <Link 
               to="/contact" 
               className={`font-medium transition-colors ${
@@ -194,13 +191,7 @@ const Navbar = () => {
               Contact
             </Link>
             
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all"
-            >
-              Get Quote
-            </motion.button>
+            
           </div>
 
           {/* Mobile menu button */}
@@ -310,17 +301,7 @@ const Navbar = () => {
                   ))}
                 </div>
                 
-                <Link 
-                  to="/projects" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block px-4 py-3 rounded-lg transition-all ${
-                    location.pathname === '/projects' 
-                      ? 'text-orange-500 bg-orange-50' 
-                      : 'text-gray-700 hover:text-orange-500 hover:bg-white'
-                  }`}
-                >
-                  Projects
-                </Link>
+                
                 <Link 
                   to="/contact" 
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -333,11 +314,7 @@ const Navbar = () => {
                   Contact
                 </Link>
                 
-                <div className="px-4 pt-2">
-                  <button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-lg font-semibold">
-                    Get Quote
-                  </button>
-                </div>
+                
               </div>
             </motion.div>
           )}
