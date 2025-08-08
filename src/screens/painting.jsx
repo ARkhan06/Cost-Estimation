@@ -1,46 +1,46 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, CheckCircle, ArrowRight, Layers, Truck, Mountain, Calculator, Clock, Users, Target } from 'lucide-react';
+import { Phone, CheckCircle, ArrowRight, Brush, Home, Building, Calculator, Clock, Users, Target, Palette, Shield } from 'lucide-react';
 
-const EarthworkPage = () => {
+const PaintingPage = () => {
   const services = [
     {
-      icon: <Layers className="w-8 h-8" />,
-      title: "Site Preparation",
-      description: "Detailed cost estimation for land clearing, grading, and site development with precision."
+      icon: <Brush className="w-8 h-8" />,
+      title: "Interior & Exterior Painting",
+      description: "Complete estimation for interior walls, ceilings, trim, doors, and exterior siding, fascia, shutters, and decorative elements."
     },
     {
-      icon: <Truck className="w-8 h-8" />,
-      title: "Hauling & Disposal", 
-      description: "Precise hauling estimates including debris removal and waste management services."
+      icon: <Home className="w-8 h-8" />,
+      title: "Residential & Commercial", 
+      description: "Tailored estimates for both residential homes and commercial buildings with specific coating requirements."
     },
     {
-      icon: <Mountain className="w-8 h-8" />,
-      title: "Cut & Fill Analysis",
-      description: "Accurate quantity takeoffs for excavation and backfill requirements with detailed breakdowns."
+      icon: <Building className="w-8 h-8" />,
+      title: "Surface Preparation",
+      description: "Comprehensive analysis including surface preparation, primer application, coating systems, and finish work."
     }
   ];
 
   const benefits = [
     {
       icon: <Target className="w-6 h-6" />,
-      title: "Accurate Volume Takeoffs",
-      description: "Precise calculations to eliminate costly miscalculations on dirt hauling and excavation."
+      title: "Division 09 Expertise",
+      description: "Certified estimators experienced in painting and coating specifications for all project types."
     },
     {
       icon: <Clock className="w-6 h-6" />,
-      title: "Faster Turnaround Times",
-      description: "Quick delivery so you can focus on moving mountains instead of crunching numbers."
+      title: "8-16 Hour Delivery",
+      description: "Quick turnaround with comprehensive painting estimates delivered based on project complexity."
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Reduced Bidding Errors",
-      description: "Professional estimates that lead to competitive bids and secured projects."
+      title: "Professional Software",
+      description: "Using approved tools like PlanSwift, Blue Beam, AccuBid, and RSMeans for accuracy."
     },
     {
       icon: <Calculator className="w-6 h-6" />,
-      title: "Customized Estimates",
-      description: "Tailored estimates for each project from residential builds to infrastructure projects."
+      title: "Detailed Material Lists",
+      description: "Complete breakdown of paints, primers, coatings, labor, and equipment with precision."
     }
   ];
 
@@ -49,10 +49,10 @@ const EarthworkPage = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-20 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-black/80"></div>
-         <div 
+        <div 
           className="absolute inset-0 bg-cover bg-center opacity-50"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"
+            backgroundImage: "url('https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"
           }}
         ></div>
         <div className="relative max-w-7xl mx-auto">
@@ -64,7 +64,7 @@ const EarthworkPage = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
-                Earthwork Estimating
+                Painting Estimation
               </span>
               <br />
               <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
@@ -73,7 +73,7 @@ const EarthworkPage = () => {
             </h1>
             
             <p className="text-xl text-gray-200 max-w-4xl mx-auto mb-8 leading-relaxed">
-              We provide precise and professional earthwork estimating services including cut & fill, trenching, and site prep – helping contractors bid competitively. Stop leaving money on the table and start securing those projects!
+              Professional painting estimating services help contractors save time, bid on more projects, and increase contract-winning chances. Our certified Division 09 estimators provide accurate material and labor calculations using advanced digital technology.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -111,10 +111,10 @@ const EarthworkPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Our <span className="text-orange-500">Earthwork</span> Services
+              Our <span className="text-orange-500">Painting</span> Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Specializing in earthwork estimation with cutting-edge precision for all project sizes
+              Comprehensive painting estimation services for all coating projects with professional expertise
             </p>
           </motion.div>
 
@@ -140,7 +140,7 @@ const EarthworkPage = () => {
         </div>
       </section>
 
-      {/* What's Included Section */}
+      {/* Painting Project Importance Section */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -150,17 +150,17 @@ const EarthworkPage = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                What's <span className="text-orange-500">Included</span> in Our Earthwork Estimate
+                Why <span className="text-orange-500">Painting Estimates</span> Matter
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Earthwork estimates are a tricky business. One miscalculation on dirt hauling or excavation costs, and your project goes from profitable to a sinkhole for your wallet. That's where we come in.
+                  Painting estimating services are crucial for construction projects as they provide comprehensive understanding of material, labor, and equipment costs. Every painting project requires accurate estimates to establish project scope, budget, and timeline.
                 </p>
                 <p>
-                  We're a trusted construction estimating company specializing in earthwork takeoffs and pricing. We take the guesswork out of your estimates so you can focus on what you do best: moving mountains of dirt.
+                  Our certified painting estimators guarantee that clients understand all expenses and materials by providing precise and detailed Division 09 estimates. We evaluate surfaces completely to determine preparation requirements and identify coating specifications.
                 </p>
                 <p>
-                  Our expert estimators use the latest tools and standards to help you reduce risk and maximize your return with detailed material and quantity takeoffs for every project.
+                  Since painting and coating work can be a significant investment, we provide our clients with the expertise and knowledge needed to make informed decisions about materials, application methods, and project execution.
                 </p>
               </div>
             </motion.div>
@@ -172,15 +172,14 @@ const EarthworkPage = () => {
               className="bg-gradient-to-br from-blue-50 to-orange-50 p-8 rounded-2xl"
             >
               <div className="bg-white p-6 rounded-xl shadow-lg">
-                <Mountain className="w-12 h-12 text-orange-500 mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Estimate Includes</h3>
+                <Brush className="w-12 h-12 text-orange-500 mb-4" />
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Estimation Benefits</h3>
                 <ul className="space-y-3">
                   {[
-                    "Cost summary and detailed quantity takeoffs",
-                    "Line item wise pricing breakdown", 
-                    "Equipment & labor cost calculations",
-                    "Comparison with other quotes and alternates",
-                    "Allowances and price breakdown by zip code"
+                    "Careful planning preventing unexpected cost overruns",
+                    "Perfect balance of materials, labor, and equipment guidance", 
+                    "Realistic project timelines and smooth coordination",
+                    "Quality control ensuring work meets industry standards"
                   ].map((item, index) => (
                     <li key={index} className="flex items-center gap-3 text-gray-600">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
@@ -194,7 +193,7 @@ const EarthworkPage = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Why Choose Digital Estimating Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -206,8 +205,8 @@ const EarthworkPage = () => {
             >
               <div className="bg-gradient-to-br from-orange-50 to-blue-50 p-8 rounded-2xl">
                 <div className="bg-white p-6 rounded-xl shadow-lg">
-                  <Layers className="w-12 h-12 text-orange-500 mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Partner With Us?</h3>
+                  <Shield className="w-12 h-12 text-orange-500 mb-4" />
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Choose Us?</h3>
                   <div className="grid gap-4">
                     {benefits.map((benefit, index) => (
                       <div key={index} className="flex items-start gap-3">
@@ -232,17 +231,17 @@ const EarthworkPage = () => {
               className="order-1 lg:order-2"
             >
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                <span className="text-orange-500">Professional</span> Earthwork Estimation
+                <span className="text-orange-500">Professional</span> & Residential Excellence
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Forget salaries, benefits, and office space for your estimators. We're a pay-as-you-go service, so you only pay when you need an estimate. This flexible approach helps you manage costs effectively.
+                  Our painting estimates serve all project requirements from residential homes to commercial buildings. We provide comprehensive estimations and expert guidance to ensure reliability, quality, and cost-effectiveness from basic touch-ups to complete coating systems.
                 </p>
                 <p>
-                  Accurate estimates lead to competitive bids. By outsourcing to our experienced earthwork estimators, you can scale your operations without hiring full-time staff, save costs, and win more bids with confidence.
+                  Our painting takeoff covers interior and exterior painting; surface preparation and primer application; specialty coatings including protective, decorative, and high-performance systems; and commercial facility maintenance including warehouses and industrial spaces.
                 </p>
                 <p>
-                  Whether you're prepping land for a residential build or managing large-scale infrastructure projects, we provide accurate calculations for excavation, grading, trenching, hauling, and backfill.
+                  We differentiate ourselves through advanced digital technologies, experienced Division 09 estimators, and commitment to accuracy and efficiency. Digital Estimating values client service and produces detailed, itemized project estimates with professional expertise.
                 </p>
               </div>
             </motion.div>
@@ -259,10 +258,10 @@ const EarthworkPage = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Dig into <span className="text-orange-500">Profits</span> with Accurate Earthwork Estimates!
+              Transform Your <span className="text-orange-500">Projects</span> with Professional Painting Estimates!
             </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Feeling buried under the weight of inaccurate estimates and tight deadlines? Let us help you with reliable takeoffs, cost breakdowns, and fast delivery – so you can focus on moving dirt, not crunching numbers.
+              We deliver accurate estimates and recommend optimal coating solutions for your project needs. Let us provide you with the expertise and knowledge required for successful painting project execution.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.button
@@ -288,4 +287,4 @@ const EarthworkPage = () => {
   );
 };
 
-export default EarthworkPage;
+export default PaintingPage;

@@ -1,60 +1,89 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, CheckCircle, ArrowRight, Layers, Truck, Mountain, Calculator, Clock, Users, Target } from 'lucide-react';
+import { Phone, CheckCircle, Star, ArrowRight, Building, FileText, Users, Calculator, Clock, Target, Award, TrendingUp, Shield } from 'lucide-react';
 
-const EarthworkPage = () => {
+const PublicBidsPage = () => {
+  
+
   const services = [
     {
-      icon: <Layers className="w-8 h-8" />,
-      title: "Site Preparation",
-      description: "Detailed cost estimation for land clearing, grading, and site development with precision."
+      icon: <Building className="w-8 h-8" />,
+      title: "Government Projects",
+      description: "Infrastructure, municipal buildings, and community development projects with precise cost estimation."
     },
     {
-      icon: <Truck className="w-8 h-8" />,
-      title: "Hauling & Disposal", 
-      description: "Precise hauling estimates including debris removal and waste management services."
+      icon: <FileText className="w-8 h-8" />,
+      title: "Bid Documentation", 
+      description: "Complete bid package preparation including detailed cost breakdowns and project specifications."
     },
     {
-      icon: <Mountain className="w-8 h-8" />,
-      title: "Cut & Fill Analysis",
-      description: "Accurate quantity takeoffs for excavation and backfill requirements with detailed breakdowns."
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "Competitive Analysis",
+      description: "Strategic bidding support to help you win more public sector contracts profitably."
     }
   ];
 
   const benefits = [
     {
       icon: <Target className="w-6 h-6" />,
-      title: "Accurate Volume Takeoffs",
-      description: "Precise calculations to eliminate costly miscalculations on dirt hauling and excavation."
+      title: "Digital Precision",
+      description: "Advanced software and methodologies provide unparalleled accuracy in public sector estimates."
     },
     {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Faster Turnaround Times",
-      description: "Quick delivery so you can focus on moving mountains instead of crunching numbers."
+      icon: <Shield className="w-6 h-6" />,
+      title: "Compliance Assurance",
+      description: "Ensure full compliance with government bidding requirements and regulations."
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Reduced Bidding Errors",
-      description: "Professional estimates that lead to competitive bids and secured projects."
+      title: "Expert Team",
+      description: "Construction and technology experts specialized in public sector projects."
     },
     {
-      icon: <Calculator className="w-6 h-6" />,
-      title: "Customized Estimates",
-      description: "Tailored estimates for each project from residential builds to infrastructure projects."
+      icon: <Clock className="w-6 h-6" />,
+      title: "Fast Turnaround",
+      description: "Meet tight public bid deadlines with our efficient estimation process."
+    }
+  ];
+
+  const publicProjectTypes = [
+    "Infrastructure Development",
+    "Municipal Buildings", 
+    "Schools & Educational Facilities",
+    "Hospitals & Healthcare Centers",
+    "Parks & Recreation Facilities",
+    "Transportation Projects",
+    "Water & Sewer Systems",
+    "Public Safety Buildings"
+  ];
+
+  const testimonials = [
+    {
+      text: "Digital Estimating helped us win our largest government contract. Their detailed estimates and compliance expertise made all the difference.",
+      rating: 5,
+      author: "Municipal Contractor"
+    },
+    {
+      text: "Outstanding service for public bids. Their digital approach and accuracy have significantly improved our win rate on government projects.",
+      rating: 5,
+      author: "Infrastructure Specialist"
     }
   ];
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-black/80"></div>
-         <div 
+      <section className="relative bg-gradient-to-br from-black-900 via-black-800 to-black-900 text-white py-20 px-4 overflow-hiddenn">
+        <div className="absolute inset-0 bg-black/100"></div>
+        
+        {/* Background Image */}
+        <div 
           className="absolute inset-0 bg-cover bg-center opacity-50"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"
+            backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"
           }}
         ></div>
+        
         <div className="relative max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -62,18 +91,19 @@ const EarthworkPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
+            
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
-                Earthwork Estimating
+                Public Bids
               </span>
               <br />
               <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
-                Services
+                Estimates
               </span>
             </h1>
             
-            <p className="text-xl text-gray-200 max-w-4xl mx-auto mb-8 leading-relaxed">
-              We provide precise and professional earthwork estimating services including cut & fill, trenching, and site prep – helping contractors bid competitively. Stop leaving money on the table and start securing those projects!
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
+              Our public bids estimates are not just numbers but blueprints for your public project success. We bring a digital edge to government sector cost estimation with unparalleled accuracy and transparency.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -82,7 +112,7 @@ const EarthworkPage = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all flex items-center gap-2"
               >
-                Request Sample Estimate
+                Get Free Sample Estimate
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
               
@@ -111,10 +141,10 @@ const EarthworkPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Our <span className="text-orange-500">Earthwork</span> Services
+              Our <span className="text-orange-500">Public Sector</span> Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Specializing in earthwork estimation with cutting-edge precision for all project sizes
+              Specialized estimation services designed for government contracts and public sector projects
             </p>
           </motion.div>
 
@@ -140,7 +170,7 @@ const EarthworkPage = () => {
         </div>
       </section>
 
-      {/* What's Included Section */}
+      {/* Public Bidding Section */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -150,17 +180,17 @@ const EarthworkPage = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                What's <span className="text-orange-500">Included</span> in Our Earthwork Estimate
+                Navigate <span className="text-orange-500">Government</span> Bidding with Confidence
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Earthwork estimates are a tricky business. One miscalculation on dirt hauling or excavation costs, and your project goes from profitable to a sinkhole for your wallet. That's where we come in.
+                  Welcome to Digital Estimating, your premier partner in revolutionizing construction estimation services for the public sector. With a name synonymous with innovation, we bring a digital edge to the art of estimating costs in government projects.
                 </p>
                 <p>
-                  We're a trusted construction estimating company specializing in earthwork takeoffs and pricing. We take the guesswork out of your estimates so you can focus on what you do best: moving mountains of dirt.
+                  Our team comprises experts at the intersection of construction and technology. Our advanced software and methodologies provide unparalleled accuracy, offering a level of transparency that empowers contractors and subcontractors to bid confidently on public projects.
                 </p>
                 <p>
-                  Our expert estimators use the latest tools and standards to help you reduce risk and maximize your return with detailed material and quantity takeoffs for every project.
+                  For public project bids, agencies are generally required to issue an open invitation to qualifying contractors who are registered to work on government construction jobs. We help you navigate this complex process with expertise and precision.
                 </p>
               </div>
             </motion.div>
@@ -172,29 +202,23 @@ const EarthworkPage = () => {
               className="bg-gradient-to-br from-blue-50 to-orange-50 p-8 rounded-2xl"
             >
               <div className="bg-white p-6 rounded-xl shadow-lg">
-                <Mountain className="w-12 h-12 text-orange-500 mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Estimate Includes</h3>
-                <ul className="space-y-3">
-                  {[
-                    "Cost summary and detailed quantity takeoffs",
-                    "Line item wise pricing breakdown", 
-                    "Equipment & labor cost calculations",
-                    "Comparison with other quotes and alternates",
-                    "Allowances and price breakdown by zip code"
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-3 text-gray-600">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      {item}
-                    </li>
+                <Building className="w-12 h-12 text-orange-500 mb-4" />
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Public Project Types</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  {publicProjectTypes.map((type, index) => (
+                    <div key={index} className="flex items-center gap-2 text-sm text-gray-600">
+                      <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      {type}
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Benefits Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -206,8 +230,8 @@ const EarthworkPage = () => {
             >
               <div className="bg-gradient-to-br from-orange-50 to-blue-50 p-8 rounded-2xl">
                 <div className="bg-white p-6 rounded-xl shadow-lg">
-                  <Layers className="w-12 h-12 text-orange-500 mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Partner With Us?</h3>
+                  <FileText className="w-12 h-12 text-orange-500 mb-4" />
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Choose Digital Estimating?</h3>
                   <div className="grid gap-4">
                     {benefits.map((benefit, index) => (
                       <div key={index} className="flex items-start gap-3">
@@ -232,23 +256,27 @@ const EarthworkPage = () => {
               className="order-1 lg:order-2"
             >
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                <span className="text-orange-500">Professional</span> Earthwork Estimation
+                <span className="text-orange-500">Digital</span> Advantage in Public Bidding
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Forget salaries, benefits, and office space for your estimators. We're a pay-as-you-go service, so you only pay when you need an estimate. This flexible approach helps you manage costs effectively.
+                  Public projects require a strategic approach that combines accurate cost estimation, regulatory compliance, and competitive pricing. Our digital methodologies ensure you submit winning bids while maintaining profitability.
                 </p>
                 <p>
-                  Accurate estimates lead to competitive bids. By outsourcing to our experienced earthwork estimators, you can scale your operations without hiring full-time staff, save costs, and win more bids with confidence.
+                  From infrastructure development to community initiatives, we've helped contractors successfully navigate the complex world of government contracting. Our commitment to accuracy and efficiency transforms visions into cost-effective realities.
                 </p>
                 <p>
-                  Whether you're prepping land for a residential build or managing large-scale infrastructure projects, we provide accurate calculations for excavation, grading, trenching, hauling, and backfill.
+                  We offer material takeoffs in both PDF and Excel formats, encompassing comprehensive lists of project materials and tasks, organized division by division with cross-references to corresponding drawings.
                 </p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
+
+     
+
+      
 
       {/* Final CTA */}
       <section className="py-16 px-4 bg-white border-t border-gray-200">
@@ -259,18 +287,15 @@ const EarthworkPage = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Dig into <span className="text-orange-500">Profits</span> with Accurate Earthwork Estimates!
+              Ready to win your next government contract?
             </h2>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Feeling buried under the weight of inaccurate estimates and tight deadlines? Let us help you with reliable takeoffs, cost breakdowns, and fast delivery – so you can focus on moving dirt, not crunching numbers.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all"
               >
-                Start Your Project
+                Start Your Public Bid
               </motion.button>
               <motion.a
                 whileHover={{ scale: 1.05 }}
@@ -288,4 +313,4 @@ const EarthworkPage = () => {
   );
 };
 
-export default EarthworkPage;
+export default PublicBidsPage;

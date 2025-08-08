@@ -1,46 +1,46 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, CheckCircle, ArrowRight, Layers, Truck, Mountain, Calculator, Clock, Users, Target } from 'lucide-react';
+import { Phone, CheckCircle, ArrowRight, Hammer, Ruler, Calculator, Clock, Users, Target, Building } from 'lucide-react';
 
-const EarthworkPage = () => {
+const FramingPage = () => {
   const services = [
     {
-      icon: <Layers className="w-8 h-8" />,
-      title: "Site Preparation",
-      description: "Detailed cost estimation for land clearing, grading, and site development with precision."
+      icon: <Hammer className="w-8 h-8" />,
+      title: "Material Cost Analysis",
+      description: "Comprehensive analysis of framing materials including lumber, hardware, and structural components."
     },
     {
-      icon: <Truck className="w-8 h-8" />,
-      title: "Hauling & Disposal", 
-      description: "Precise hauling estimates including debris removal and waste management services."
+      icon: <Ruler className="w-8 h-8" />,
+      title: "Labor & Complexity Assessment", 
+      description: "Detailed evaluation of labor requirements based on project size, scope, and complexity factors."
     },
     {
-      icon: <Mountain className="w-8 h-8" />,
-      title: "Cut & Fill Analysis",
-      description: "Accurate quantity takeoffs for excavation and backfill requirements with detailed breakdowns."
+      icon: <Building className="w-8 h-8" />,
+      title: "Custom Project Estimation",
+      description: "Specialized estimates for new builds, renovations, and custom framing projects of all scales."
     }
   ];
 
   const benefits = [
     {
       icon: <Target className="w-6 h-6" />,
-      title: "Accurate Volume Takeoffs",
-      description: "Precise calculations to eliminate costly miscalculations on dirt hauling and excavation."
+      title: "Precise Cost Forecasting",
+      description: "Accurate framing estimates that keep projects on budget and schedule for success."
     },
     {
       icon: <Clock className="w-6 h-6" />,
-      title: "Faster Turnaround Times",
-      description: "Quick delivery so you can focus on moving mountains instead of crunching numbers."
+      title: "Fast Turnaround",
+      description: "Quick delivery of detailed estimates, usually within a few days of receiving project data."
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Reduced Bidding Errors",
-      description: "Professional estimates that lead to competitive bids and secured projects."
+      title: "Resource Optimization",
+      description: "Help divide resources properly and prevent costly mistakes in material ordering."
     },
     {
       icon: <Calculator className="w-6 h-6" />,
-      title: "Customized Estimates",
-      description: "Tailored estimates for each project from residential builds to infrastructure projects."
+      title: "Competitive Bidding",
+      description: "Fair and accurate estimates that give contractors competitive advantage in bidding."
     }
   ];
 
@@ -49,10 +49,10 @@ const EarthworkPage = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-20 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-black/80"></div>
-         <div 
+        <div 
           className="absolute inset-0 bg-cover bg-center opacity-50"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"
+            backgroundImage: "url('https://images.unsplash.com/photo-1676802011385-39ca3b401ec9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
           }}
         ></div>
         <div className="relative max-w-7xl mx-auto">
@@ -64,7 +64,7 @@ const EarthworkPage = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
-                Earthwork Estimating
+                Framing Estimation
               </span>
               <br />
               <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
@@ -73,7 +73,7 @@ const EarthworkPage = () => {
             </h1>
             
             <p className="text-xl text-gray-200 max-w-4xl mx-auto mb-8 leading-relaxed">
-              We provide precise and professional earthwork estimating services including cut & fill, trenching, and site prep – helping contractors bid competitively. Stop leaving money on the table and start securing those projects!
+              Framing estimate services are vital to figuring out framing expenses for new builds, renovations, or custom projects. Get precise estimates that help budgeting, resource allocation, and fair bidding among contractors.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -111,10 +111,10 @@ const EarthworkPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Our <span className="text-orange-500">Earthwork</span> Services
+              Our <span className="text-orange-500">Framing</span> Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Specializing in earthwork estimation with cutting-edge precision for all project sizes
+              Comprehensive framing estimation services with cutting-edge precision for all construction projects
             </p>
           </motion.div>
 
@@ -140,7 +140,7 @@ const EarthworkPage = () => {
         </div>
       </section>
 
-      {/* What's Included Section */}
+      {/* Framing Cost Factors Section */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -150,17 +150,17 @@ const EarthworkPage = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                What's <span className="text-orange-500">Included</span> in Our Earthwork Estimate
+                Key <span className="text-orange-500">Cost Factors</span> in Framing
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Earthwork estimates are a tricky business. One miscalculation on dirt hauling or excavation costs, and your project goes from profitable to a sinkhole for your wallet. That's where we come in.
+                  Several elements influence the cost of framing, and knowing them will allow you to budget for your project properly. Our estimation of framing costs considers the following main expenses and factors.
                 </p>
                 <p>
-                  We're a trusted construction estimating company specializing in earthwork takeoffs and pricing. We take the guesswork out of your estimates so you can focus on what you do best: moving mountains of dirt.
+                  To suit every task, framing estimates account for many things including the cost of materials, labor, additional fees, and how complex the project is. The right framing estimates matter for keeping projects on budget and schedule.
                 </p>
                 <p>
-                  Our expert estimators use the latest tools and standards to help you reduce risk and maximize your return with detailed material and quantity takeoffs for every project.
+                  Good construction projects need framing estimates that show exactly how much framing supplies and costs will be. Right project management needs spot-on forecasting to ensure success.
                 </p>
               </div>
             </motion.div>
@@ -172,15 +172,14 @@ const EarthworkPage = () => {
               className="bg-gradient-to-br from-blue-50 to-orange-50 p-8 rounded-2xl"
             >
               <div className="bg-white p-6 rounded-xl shadow-lg">
-                <Mountain className="w-12 h-12 text-orange-500 mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Estimate Includes</h3>
+                <Hammer className="w-12 h-12 text-orange-500 mb-4" />
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Cost Components Include</h3>
                 <ul className="space-y-3">
                   {[
-                    "Cost summary and detailed quantity takeoffs",
-                    "Line item wise pricing breakdown", 
-                    "Equipment & labor cost calculations",
-                    "Comparison with other quotes and alternates",
-                    "Allowances and price breakdown by zip code"
+                    "Material costs for lumber and structural components",
+                    "Labor rates based on project complexity and location", 
+                    "Additional fees for permits and inspections",
+                    "Project complexity factors and special requirements"
                   ].map((item, index) => (
                     <li key={index} className="flex items-center gap-3 text-gray-600">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
@@ -194,7 +193,7 @@ const EarthworkPage = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Why Choose Digital Estimating Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -206,8 +205,8 @@ const EarthworkPage = () => {
             >
               <div className="bg-gradient-to-br from-orange-50 to-blue-50 p-8 rounded-2xl">
                 <div className="bg-white p-6 rounded-xl shadow-lg">
-                  <Layers className="w-12 h-12 text-orange-500 mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Partner With Us?</h3>
+                  <Building className="w-12 h-12 text-orange-500 mb-4" />
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Choose Us?</h3>
                   <div className="grid gap-4">
                     {benefits.map((benefit, index) => (
                       <div key={index} className="flex items-start gap-3">
@@ -232,17 +231,17 @@ const EarthworkPage = () => {
               className="order-1 lg:order-2"
             >
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                <span className="text-orange-500">Professional</span> Earthwork Estimation
+                <span className="text-orange-500">Digital Estimating</span> - Your Trusted Partner
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Forget salaries, benefits, and office space for your estimators. We're a pay-as-you-go service, so you only pay when you need an estimate. This flexible approach helps you manage costs effectively.
+                  At Digital Estimating, we are experts at giving you trustworthy and precise framing estimates. These help you make smart choices, avoid surprise costs, and keep your project running on time.
                 </p>
                 <p>
-                  Accurate estimates lead to competitive bids. By outsourcing to our experienced earthwork estimators, you can scale your operations without hiring full-time staff, save costs, and win more bids with confidence.
+                  Framing estimate services lessen cost mistakes, help divide resources right, and make bidding fair among contractors. These exact numbers steer project plans and cut down disruption and delay.
                 </p>
                 <p>
-                  Whether you're prepping land for a residential build or managing large-scale infrastructure projects, we provide accurate calculations for excavation, grading, trenching, hauling, and backfill.
+                  We require comprehensive architectural designs, project specifications, and any other pertinent information concerning your framing project to offer the most realistic quotation. The more details you provide, the more exact our framing estimate services will be.
                 </p>
               </div>
             </motion.div>
@@ -259,10 +258,10 @@ const EarthworkPage = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Dig into <span className="text-orange-500">Profits</span> with Accurate Earthwork Estimates!
+              Frame Your <span className="text-orange-500">Success</span> with Accurate Estimates!
             </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Feeling buried under the weight of inaccurate estimates and tight deadlines? Let us help you with reliable takeoffs, cost breakdowns, and fast delivery – so you can focus on moving dirt, not crunching numbers.
+              Budgeting and planning call for an accurate assessment. Let us help you properly distribute resources, prevent unanticipated expenses, and guarantee your project's financial feasibility.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.button
@@ -288,4 +287,4 @@ const EarthworkPage = () => {
   );
 };
 
-export default EarthworkPage;
+export default FramingPage;
