@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, CheckCircle, ArrowRight, Brush, Home, Layers, Calculator, Clock, Users, Target, Palette, Shield } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const InteriorFinishesPage = () => {
+  const location = useLocation();
   const services = [
     {
       icon: <Brush className="w-8 h-8" />,
@@ -76,27 +78,7 @@ const InteriorFinishesPage = () => {
               Professional interior and exterior finishes estimation services providing accurate cost analysis for painting, drywall, ceilings, flooring, stucco, and specialized coatings. Our expert estimators deliver comprehensive breakdowns using advanced technology and industry expertise.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all flex items-center gap-2"
-              >
-                Request Sample Estimate
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-              
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-white hover:text-orange-300 transition-colors font-medium"
-              >
-                <div className="bg-white/10 p-2 rounded-full">
-                  <Phone className="w-5 h-5" />
-                </div>
-                Have Questions? +1 (281) 899-0989
-              </motion.a>
-            </div>
+            
           </motion.div>
         </div>
       </section>
@@ -193,7 +175,7 @@ const InteriorFinishesPage = () => {
         </div>
       </section>
 
-      {/* Why Choose Digital Estimating Section */}
+      {/* Why Choose FAZICS Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -241,7 +223,7 @@ const InteriorFinishesPage = () => {
                   Our finishes takeoff covers all elements including surface preparation, primer applications, base coats, finish coats, textures, decorative finishes, protective coatings, and maintenance requirements with precise material and labor calculations using advanced estimation software.
                 </p>
                 <p>
-                  We differentiate ourselves through cutting-edge technologies like PlanSwift and Blue Beam, experienced finishes estimators, and commitment to accuracy using RSMeans pricing databases. Digital Estimating values client service and produces detailed, itemized finishes estimates with industry expertise and quality standards.
+                  We differentiate ourselves through cutting-edge technologies like PlanSwift and Blue Beam, experienced finishes estimators, and commitment to accuracy using RSMeans pricing databases. FAZICS values client service and produces detailed, itemized finishes estimates with industry expertise and quality standards.
                 </p>
               </div>
             </motion.div>
@@ -264,21 +246,11 @@ const InteriorFinishesPage = () => {
               We provide detailed breakdowns for interior and exterior finishes, eliminating guesswork and ensuring comprehensive understanding of costs associated with your finishing projects. Get precise estimates that minimize material waste and prevent financial burdens.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all"
-              >
-                Start Your Project
-              </motion.button>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-gray-700 hover:text-orange-500 transition-colors font-medium"
-              >
-                <Phone className="w-5 h-5" />
-                +1 (281) 899-0989
-              </motion.a>
+              <Link to='/contact'>
+                <button className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 transition-all hover:scale-105">
+                  Contact Us
+                </button>
+                </Link>
             </div>
           </motion.div>
         </div>

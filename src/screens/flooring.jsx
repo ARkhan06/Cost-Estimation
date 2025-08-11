@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, CheckCircle, ArrowRight, Grid3x3, Layers, Calculator, Clock, Users, Target, Building, Home } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const FlooringPage = () => {
+  const location = useLocation();
   const services = [
     {
       icon: <Grid3x3 className="w-8 h-8" />,
@@ -76,27 +78,7 @@ const FlooringPage = () => {
               Professional flooring cost estimates include all necessary steps, supplies, and work to complete your project. Get accurate estimates based on location and project size with modern technology and expert analysis.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all flex items-center gap-2"
-              >
-                Request Sample Estimate
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-              
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-white hover:text-orange-300 transition-colors font-medium"
-              >
-                <div className="bg-white/10 p-2 rounded-full">
-                  <Phone className="w-5 h-5" />
-                </div>
-                Have Questions? +1 (281) 899-0989
-              </motion.a>
-            </div>
+            
           </motion.div>
         </div>
       </section>
@@ -238,7 +220,7 @@ const FlooringPage = () => {
                   Our skilled flooring cost estimator uses approved tools like Blue Beam, Plan Fast, OST, and Quick Bids to estimate quantities while following standards and codes. We guarantee precise estimates with our skilled fieldwork flooring estimators.
                 </p>
                 <p>
-                  Commercial flooring installations have unique requirements. Digital Estimating provides commercial flooring estimate services for businesses with particular demands, examining specific factors that affect cost and installation complexity.
+                  Commercial flooring installations have unique requirements. FAZICS provides commercial flooring estimate services for businesses with particular demands, examining specific factors that affect cost and installation complexity.
                 </p>
                 <p>
                   We provide detailed estimates for residential and commercial flooring projects tailored to their needs, covering all installation steps using modern tools and professional analysis to avoid financial shocks.
@@ -264,21 +246,11 @@ const FlooringPage = () => {
               Hire a reliable Flooring Estimate Services provider like us to avoid hassles. Save time and let us focus on accurate bid management while you concentrate on other important tasks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all"
-              >
-                Start Your Project
-              </motion.button>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-gray-700 hover:text-orange-500 transition-colors font-medium"
-              >
-                <Phone className="w-5 h-5" />
-                +1 (281) 899-0989
-              </motion.a>
+              <Link to='/contact'>
+                <button className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 transition-all hover:scale-105">
+                  Contact Us
+                </button>
+                </Link>
             </div>
           </motion.div>
         </div>

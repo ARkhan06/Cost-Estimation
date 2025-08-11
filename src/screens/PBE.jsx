@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, CheckCircle, Star, ArrowRight, Building, FileText, Users, Calculator, Clock, Target, Award, TrendingUp, Shield } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const PublicBidsPage = () => {
+  const location = useLocation();
   
 
   const services = [
@@ -59,7 +61,7 @@ const PublicBidsPage = () => {
 
   const testimonials = [
     {
-      text: "Digital Estimating helped us win our largest government contract. Their detailed estimates and compliance expertise made all the difference.",
+      text: "FAZICS helped us win our largest government contract. Their detailed estimates and compliance expertise made all the difference.",
       rating: 5,
       author: "Municipal Contractor"
     },
@@ -164,7 +166,7 @@ const PublicBidsPage = () => {
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Welcome to Digital Estimating, your premier partner in revolutionizing construction estimation services for the public sector. With a name synonymous with innovation, we bring a digital edge to the art of estimating costs in government projects.
+                  Welcome to FAZICS, your premier partner in revolutionizing construction estimation services for the public sector. With a name synonymous with innovation, we bring a digital edge to the art of estimating costs in government projects.
                 </p>
                 <p>
                   Our team comprises experts at the intersection of construction and technology. Our advanced software and methodologies provide unparalleled accuracy, offering a level of transparency that empowers contractors and subcontractors to bid confidently on public projects.
@@ -211,7 +213,7 @@ const PublicBidsPage = () => {
               <div className="bg-gradient-to-br from-orange-50 to-blue-50 p-8 rounded-2xl">
                 <div className="bg-white p-6 rounded-xl shadow-lg">
                   <FileText className="w-12 h-12 text-orange-500 mb-4" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Choose Digital Estimating?</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Choose FAZICS?</h3>
                   <div className="grid gap-4">
                     {benefits.map((benefit, index) => (
                       <div key={index} className="flex items-start gap-3">
@@ -270,21 +272,11 @@ const PublicBidsPage = () => {
               Ready to win your next government contract?
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all"
-              >
-                Start Your Public Bid
-              </motion.button>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-gray-700 hover:text-orange-500 transition-colors font-medium"
-              >
-                <Phone className="w-5 h-5" />
-                +1 (281) 899-0989
-              </motion.a>
+               <Link to='/contact'>
+                <button className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 transition-all hover:scale-105">
+                  Contact Us
+                </button>
+                </Link>
             </div>
           </motion.div>
         </div>

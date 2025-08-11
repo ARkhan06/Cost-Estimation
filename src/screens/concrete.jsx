@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, CheckCircle, ArrowRight, SquareStack, Ruler, Building2, Calculator, Clock, Users, Target } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const ConcretePage = () => {
+  const location = useLocation();
   const services = [
     {
       icon: <SquareStack className="w-8 h-8" />,
@@ -76,27 +78,7 @@ const ConcretePage = () => {
               Get accurate and professional concrete takeoffs and estimates for residential, commercial, and industrial projects. Our comprehensive services ensure precise cost estimation and effective resource management.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all flex items-center gap-2"
-              >
-                Request Sample Estimate
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-              
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-white hover:text-orange-300 transition-colors font-medium"
-              >
-                <div className="bg-white/10 p-2 rounded-full">
-                  <Phone className="w-5 h-5" />
-                </div>
-                Have Questions? +1 (281) 899-0989
-              </motion.a>
-            </div>
+            
           </motion.div>
         </div>
       </section>
@@ -154,7 +136,7 @@ const ConcretePage = () => {
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Concrete takeoff is essential to Digital Estimating's concrete estimating services. This process involves carefully reviewing project plans and specifications to determine unique needs and material requirements.
+                  Concrete takeoff is essential to FAZICS's concrete estimating services. This process involves carefully reviewing project plans and specifications to determine unique needs and material requirements.
                 </p>
                 <p>
                   Our concrete takeoff services offer a firm foundation for your project, enabling accurate cost estimation and resource management. We quantify all materials needed for your concrete project with precision and attention to detail.
@@ -231,7 +213,7 @@ const ConcretePage = () => {
               className="order-1 lg:order-2"
             >
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Why Choose <span className="text-orange-500">Digital Estimating?</span>
+                Why Choose <span className="text-orange-500">FAZICS?</span>
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
@@ -264,21 +246,11 @@ const ConcretePage = () => {
               We deliver comprehensive concrete estimates including quantities, labor, material costs, and location-based pricing. Let us help you reduce cost overruns and win more projects.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all"
-              >
-                Start Your Project
-              </motion.button>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-gray-700 hover:text-orange-500 transition-colors font-medium"
-              >
-                <Phone className="w-5 h-5" />
-                +1 (281) 899-0989
-              </motion.a>
+              <Link to='/contact'>
+                <button className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 transition-all hover:scale-105">
+                  Contact Us
+                </button>
+                </Link>
             </div>
           </motion.div>
         </div>

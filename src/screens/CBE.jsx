@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, CheckCircle, ArrowRight, Building2, FileBarChart, TrendingUp, Calculator, Clock, Users, Target, Award, ShoppingCart, Briefcase } from 'lucide-react';
-
+import { Link ,useLocation} from 'react-router-dom';
 const CommercialBidsPage = () => {
+  const location = useLocation();
   const services = [
     {
       icon: <Building2 className="w-8 h-8" />,
@@ -168,7 +169,7 @@ const CommercialBidsPage = () => {
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Digital Estimating is your trusted partner in transforming commercial construction visions into reality. With an extensive legacy of excellence, our seasoned team of experts understands the intricate dynamics of commercial construction.
+                  FAZICS is your trusted partner in transforming commercial construction visions into reality. With an extensive legacy of excellence, our seasoned team of experts understands the intricate dynamics of commercial construction.
                 </p>
                 <p>
                   We provide reliable estimates to support your project planning and resource allocation. Our precision and detail-oriented approach gives you a comprehensive understanding of your project's cost implications, empowering you to make informed decisions.
@@ -311,27 +312,18 @@ const CommercialBidsPage = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Choose Confidence, Choose Competence – Choose Digital Estimating
+              Choose Confidence, Choose Competence – Choose FAZICS
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Ready to transform your commercial construction vision into reality with precise, efficient, and cost-effective estimates?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all"
-              >
-                Start Your Commercial Project
-              </motion.button>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-gray-700 hover:text-orange-500 transition-colors font-medium"
-              >
-                <Phone className="w-5 h-5" />
-                +1 (281) 899-0989
-              </motion.a>
+             
+              <Link to='/contact'>
+                <button className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 transition-all hover:scale-105">
+                  Contact Us
+                </button>
+                </Link>
             </div>
           </motion.div>
         </div>

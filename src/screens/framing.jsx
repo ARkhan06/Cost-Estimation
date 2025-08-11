@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, CheckCircle, ArrowRight, Hammer, Ruler, Calculator, Clock, Users, Target, Building } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const FramingPage = () => {
+  const location = useLocation();
   const services = [
     {
       icon: <Hammer className="w-8 h-8" />,
@@ -76,27 +78,7 @@ const FramingPage = () => {
               Framing estimate services are vital to figuring out framing expenses for new builds, renovations, or custom projects. Get precise estimates that help budgeting, resource allocation, and fair bidding among contractors.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all flex items-center gap-2"
-              >
-                Request Sample Estimate
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-              
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-white hover:text-orange-300 transition-colors font-medium"
-              >
-                <div className="bg-white/10 p-2 rounded-full">
-                  <Phone className="w-5 h-5" />
-                </div>
-                Have Questions? +1 (281) 899-0989
-              </motion.a>
-            </div>
+            
           </motion.div>
         </div>
       </section>
@@ -193,7 +175,7 @@ const FramingPage = () => {
         </div>
       </section>
 
-      {/* Why Choose Digital Estimating Section */}
+      {/* Why Choose FAZICS Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -231,11 +213,11 @@ const FramingPage = () => {
               className="order-1 lg:order-2"
             >
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                <span className="text-orange-500">Digital Estimating</span> - Your Trusted Partner
+                <span className="text-orange-500">FAZICS</span> - Your Trusted Partner
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  At Digital Estimating, we are experts at giving you trustworthy and precise framing estimates. These help you make smart choices, avoid surprise costs, and keep your project running on time.
+                  At FAZICS, we are experts at giving you trustworthy and precise framing estimates. These help you make smart choices, avoid surprise costs, and keep your project running on time.
                 </p>
                 <p>
                   Framing estimate services lessen cost mistakes, help divide resources right, and make bidding fair among contractors. These exact numbers steer project plans and cut down disruption and delay.
@@ -264,21 +246,11 @@ const FramingPage = () => {
               Budgeting and planning call for an accurate assessment. Let us help you properly distribute resources, prevent unanticipated expenses, and guarantee your project's financial feasibility.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all"
-              >
-                Start Your Project
-              </motion.button>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-gray-700 hover:text-orange-500 transition-colors font-medium"
-              >
-                <Phone className="w-5 h-5" />
-                +1 (281) 899-0989
-              </motion.a>
+              <Link to='/contact'>
+                <button className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 transition-all hover:scale-105">
+                  Contact Us
+                </button>
+                </Link>
             </div>
           </motion.div>
         </div>

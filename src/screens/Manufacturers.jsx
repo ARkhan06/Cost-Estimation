@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, CheckCircle, ArrowRight, Building2, Clock, Headphones, DollarSign, Shield, Users, Target, TrendingUp, FileText } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const ManufacturersPage = () => {
+  const location = useLocation();
   const services = [
     {
       icon: <Building2 className="w-8 h-8" />,
@@ -119,7 +121,7 @@ const ManufacturersPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Choose <span className="text-orange-500">Digital Estimating</span>
+              Why Choose <span className="text-orange-500">FAZICS</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive takeoff services designed specifically for manufacturers with precision and reliability
@@ -162,7 +164,7 @@ const ManufacturersPage = () => {
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Digital Estimating offers construction estimating services for a wide range of projects, including private, government, and military clients. We have earned the trust of the US Government through our consistent delivery of accurate and reliable estimates.
+                  FAZICS offers construction estimating services for a wide range of projects, including private, government, and military clients. We have earned the trust of the US Government through our consistent delivery of accurate and reliable estimates.
                 </p>
                 <p>
                   Our extensive experience with federal and state government projects, both domestically and internationally, positions us as a trusted partner in the construction industry. We understand the unique requirements and stringent standards required for government projects.
@@ -287,21 +289,11 @@ const ManufacturersPage = () => {
               Let's discuss how our estimating services and Virtual Bid Manager can help you win more projects and grow your manufacturing business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all"
-              >
-                Start Your Project
-              </motion.button>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-gray-700 hover:text-orange-500 transition-colors font-medium"
-              >
-                <Phone className="w-5 h-5" />
-                +1 (281) 899-0989
-              </motion.a>
+              <Link to='/contact'>
+                <button className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 transition-all hover:scale-105">
+                  Contact Us
+                </button>
+                </Link>
             </div>
           </motion.div>
         </div>

@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, CheckCircle, ArrowRight, Square, Layers, Calculator, Clock, Users, Target, Building } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const DrywallPage = () => {
+  const location = useLocation();
   const services = [
     {
       icon: <Square className="w-8 h-8" />,
@@ -76,27 +78,7 @@ const DrywallPage = () => {
               Accurate determination of expenses related to drywall installation projects depends on professional drywall estimating services. We provide thorough analysis of labor, materials, and other elements for complete cost estimates.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all flex items-center gap-2"
-              >
-                Request Sample Estimate
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-              
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-white hover:text-orange-300 transition-colors font-medium"
-              >
-                <div className="bg-white/10 p-2 rounded-full">
-                  <Phone className="w-5 h-5" />
-                </div>
-                Have Questions? +1 (281) 899-0989
-              </motion.a>
-            </div>
+           
           </motion.div>
         </div>
       </section>
@@ -193,7 +175,7 @@ const DrywallPage = () => {
         </div>
       </section>
 
-      {/* Why Choose Digital Estimating Section */}
+      {/* Why Choose FAZICS Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -235,13 +217,13 @@ const DrywallPage = () => {
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Our drywall estimating services at Digital Estimating are designed to provide exact cost analyses for both residential and commercial projects. Our staff estimates expenses for drywall installation using cutting-edge software and great industry knowledge.
+                  Our drywall estimating services at FAZICS are designed to provide exact cost analyses for both residential and commercial projects. Our staff estimates expenses for drywall installation using cutting-edge software and great industry knowledge.
                 </p>
                 <p>
                   Our thorough estimate report shows all expenses of your drywall installation project, helping you see where every dollar will be used. We will go over the estimate with you, breaking out each element and responding to any inquiries you may have.
                 </p>
                 <p>
-                  Selecting Digital Estimating for your drywall estimating services guarantees precise, comprehensive, and consistent cost estimates that help you plan and execute your projects successfully within budget and timeline.
+                  Selecting FAZICS for your drywall estimating services guarantees precise, comprehensive, and consistent cost estimates that help you plan and execute your projects successfully within budget and timeline.
                 </p>
               </div>
             </motion.div>
@@ -264,21 +246,11 @@ const DrywallPage = () => {
               Our delight comes from providing accurate and dependable drywall estimating services to enable you to plan and carry out your projects properly. Get customized estimates that fit your particular demands and budget.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all"
-              >
-                Start Your Project
-              </motion.button>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-gray-700 hover:text-orange-500 transition-colors font-medium"
-              >
-                <Phone className="w-5 h-5" />
-                +1 (281) 899-0989
-              </motion.a>
+              <Link to='/contact'>
+                <button className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 transition-all hover:scale-105">
+                  Contact Us
+                </button>
+                </Link>
             </div>
           </motion.div>
         </div>
