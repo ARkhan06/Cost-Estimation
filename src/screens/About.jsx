@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, CheckCircle, ArrowRight, Building2, Clock, Headphones, DollarSign, Shield, Users, Target, TrendingUp, Award, Zap, Eye, MessageCircle } from 'lucide-react';
-
+import { Link, useLocation } from 'react-router-dom';
 const AboutCompanyPage = () => {
+  const location = useLocation();
   const leadership = [
     {
       icon: <Users className="w-8 h-8" />,
       name: "Abdullah Khan",
       title: "Founder | CEO & Chairman",
-      message: "We founded Digital Estimating with a clear mission: to streamline and revolutionize the construction estimation process through cutting-edge technology and expert knowledge. For too long, the industry has relied on outdated methods that are time-consuming, error-prone, and often lead to costly overruns.",
+      message: "We founded FAZICS with a clear mission: to streamline and revolutionize the construction estimation process through cutting-edge technology and expert knowledge. For too long, the industry has relied on outdated methods that are time-consuming, error-prone, and often lead to costly overruns.",
       vision: "Join us as we redefine the future of construction estimation."
     }
   ];
@@ -60,7 +61,7 @@ const AboutCompanyPage = () => {
               </span>
               <br />
               <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
-                Digital Estimating®
+                FAZICS®
               </span>
             </h1>
             
@@ -68,27 +69,7 @@ const AboutCompanyPage = () => {
               Where excellence and accuracy meet when providing construction estimating services. Our unrivalled knowledge guarantees you win your projects and offers industry-leading estimates to enable you to get success in public, residential, and commercial bids.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all flex items-center gap-2"
-              >
-                Learn More About Us
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-              
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-white hover:text-orange-300 transition-colors font-medium"
-              >
-                <div className="bg-white/10 p-2 rounded-full">
-                  <Phone className="w-5 h-5" />
-                </div>
-                Have Questions? +1 (281) 899-0989
-              </motion.a>
-            </div>
+           
           </motion.div>
         </div>
       </section>
@@ -209,7 +190,7 @@ const AboutCompanyPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Choose <span className="text-orange-500">Digital Estimating</span>
+              Why Choose <span className="text-orange-500">FAZICS</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We are trusted construction estimating services providers helping contractors and sub-contractors bid more
@@ -252,7 +233,7 @@ const AboutCompanyPage = () => {
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Digital Estimating offers construction estimating services for a wide range of projects, including private, government, and military clients. We have earned the trust of the US Government through our consistent delivery of accurate and reliable estimates.
+                  FAZICS offers construction estimating services for a wide range of projects, including private, government, and military clients. We have earned the trust of the US Government through our consistent delivery of accurate and reliable estimates.
                 </p>
                 <p>
                   With our dedication, dependability and quality, we help you succeed on every bid. Our unrivalled knowledge guarantees you win your projects and offers industry-leading estimates to enable you to get success in public, residential, and commercial bids.
@@ -307,24 +288,14 @@ const AboutCompanyPage = () => {
               Ready to Transform Your Construction Estimating?
             </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Join thousands of contractors who trust Digital Estimating for accurate, fast, and reliable construction estimates.
+              Join thousands of contractors who trust FAZICS for accurate, fast, and reliable construction estimates.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all"
-              >
-                Get Started Today
-              </motion.button>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-gray-700 hover:text-orange-500 transition-colors font-medium"
-              >
-                <Phone className="w-5 h-5" />
-                +1 (281) 899-0989
-              </motion.a>
+              <Link to='/contact'>
+                <button className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 transition-all hover:scale-105">
+                  Contact Us
+                </button>
+                </Link>
             </div>
           </motion.div>
         </div>

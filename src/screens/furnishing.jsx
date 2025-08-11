@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, CheckCircle, ArrowRight, Sofa, Home, Building, Calculator, Clock, Users, Target, Package, Shield } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const FurnishingPage = () => {
+  const location = useLocation();
   const services = [
     {
       icon: <Sofa className="w-8 h-8" />,
@@ -76,27 +78,7 @@ const FurnishingPage = () => {
               Professional furnishing estimation services for furniture, fixtures, and equipment (FF&E) projects. Our expert estimators provide accurate cost analysis for residential and commercial furnishing needs, helping clients make informed decisions while staying within budget for all project types.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all flex items-center gap-2"
-              >
-                Request Sample Estimate
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-              
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-white hover:text-orange-300 transition-colors font-medium"
-              >
-                <div className="bg-white/10 p-2 rounded-full">
-                  <Phone className="w-5 h-5" />
-                </div>
-                Have Questions? +1 (281) 899-0989
-              </motion.a>
-            </div>
+           
           </motion.div>
         </div>
       </section>
@@ -193,7 +175,7 @@ const FurnishingPage = () => {
         </div>
       </section>
 
-      {/* Why Choose Digital Estimating Section */}
+      {/* Why Choose FAZICS Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -241,7 +223,7 @@ const FurnishingPage = () => {
                   Our FF&E takeoff covers all elements including furniture layouts, fixture installations, equipment specifications, delivery schedules, installation requirements, and warranty considerations with precise cost calculations using industry-standard pricing and vendor relationships.
                 </p>
                 <p>
-                  We differentiate ourselves through extensive vendor networks, experienced furnishing specialists, and commitment to quality and budget adherence. Digital Estimating values client service and produces detailed, itemized furnishing estimates with design expertise and project management experience.
+                  We differentiate ourselves through extensive vendor networks, experienced furnishing specialists, and commitment to quality and budget adherence. FAZICS values client service and produces detailed, itemized furnishing estimates with design expertise and project management experience.
                 </p>
               </div>
             </motion.div>
@@ -264,21 +246,11 @@ const FurnishingPage = () => {
               Our team accurately estimates furnishing costs based on your specific needs and preferences. We consider project size, furniture type and quality, and customizations to create personalized estimates that help you plan your budget wisely and set priorities for your furnishing needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all"
-              >
-                Start Your Project
-              </motion.button>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-gray-700 hover:text-orange-500 transition-colors font-medium"
-              >
-                <Phone className="w-5 h-5" />
-                +1 (281) 899-0989
-              </motion.a>
+              <Link to='/contact'>
+                <button className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 transition-all hover:scale-105">
+                  Contact Us
+                </button>
+                </Link>
             </div>
           </motion.div>
         </div>

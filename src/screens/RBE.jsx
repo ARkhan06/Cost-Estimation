@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, CheckCircle, ArrowRight, Home, Calculator, TrendingUp, Target, Clock, Users, Award, Hammer, Building, PaintBucket } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const ResidentialBidsPage = () => {
+  const location = useLocation();
   const services = [
     {
       icon: <Home className="w-8 h-8" />,
@@ -125,7 +127,7 @@ const ResidentialBidsPage = () => {
             </h1>
             
             <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
-              Elevate your residential projects with Digital Estimating's expertise! Our seasoned team brings forth a wealth of experience, navigating the intricacies of residential construction with precision and accuracy.
+              Elevate your residential projects with FAZICS's expertise! Our seasoned team brings forth a wealth of experience, navigating the intricacies of residential construction with precision and accuracy.
             </p>
             
           
@@ -186,7 +188,7 @@ const ResidentialBidsPage = () => {
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  With a proven track record and an unwavering commitment to precision, Digital Estimating stands as the beacon of excellence in residential project estimation. From the foundation to the finishing touches, we've meticulously estimated countless dream homes.
+                  With a proven track record and an unwavering commitment to precision, FAZICS stands as the beacon of excellence in residential project estimation. From the foundation to the finishing touches, we've meticulously estimated countless dream homes.
                 </p>
                 <p>
                   Our accuracy goes beyond numbers to reflect our passion for your bid success. Whether you need to newly construct, renovate, or remodel your projects, we provide exact estimates to meet your budget and help you win more profitable residential projects.
@@ -338,27 +340,17 @@ const ResidentialBidsPage = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Choose Digital Estimating for Your Residential Projects
+              Choose FAZICS for Your Residential Projects
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Ready to transform your residential construction vision into reality with precision, efficiency, and cost-effectiveness?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all"
-              >
-                Start Your Home Project
-              </motion.button>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-gray-700 hover:text-orange-500 transition-colors font-medium"
-              >
-                <Phone className="w-5 h-5" />
-                +1 (281) 899-0989
-              </motion.a>
+               <Link to='/contact'>
+                <button className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 transition-all hover:scale-105">
+                  Contact Us
+                </button>
+                </Link>
             </div>
           </motion.div>
         </div>

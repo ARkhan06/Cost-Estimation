@@ -2,52 +2,56 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, ArrowRight, Star } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
   const footerSections = [
     {
-      title: "Services",
+      title: "General Contractors",
       links: [
-        { name: "MEP Estimates", path: "/mep" },
         { name: "Public Bids Estimates", path: "/public-bids" },
-        { name: "Commercial Estimates", path: "/commercial-bids" }, 
-        { name: "Residential Estimates", path: "/residential-bids" },
-        { name: "Material Takeoffs", path: "/material-takeoffs" },
-        { name: "Virtual Bid Manager", path: "/virtual-bid-manager" }
+        { name: "Commercial Bids Estimates", path: "/commercial-bids" },
+        { name: "Residential Bids Estimates", path: "/residential-bids" }
       ]
     },
     {
       title: "Subcontractor Services",
       links: [
-        { name: "Concrete Estimation", path: "/concrete" },
-        { name: "Framing Estimation", path: "/framing" },
-        { name: "Drywall Estimation", path: "/drywall" },
-        { name: "Flooring Estimation", path: "/flooring" },
-        { name: "Roofing Estimation", path: "/roofing" },
-        { name: "Painting Estimation", path: "/painting" }
+        { name: "MEP", path: "/mep" },
+        { name: "Earthwork", path: "/earthwork" },
+        { name: "Concrete", path: "/concrete" },
+        { name: "Framing", path: "/framing" },
+        { name: "Drywall", path: "/drywall" },
+        { name: "Flooring", path: "/flooring" }
       ]
     },
     {
-      title: "Industries",
+      title: "More Services",
       links: [
-        { name: "Government Projects", path: "/industries/government" },
-        { name: "Commercial Buildings", path: "/industries/commercial" },
-        { name: "Residential Construction", path: "/industries/residential" },
-        { name: "Industrial Facilities", path: "/industries/industrial" },
-        { name: "Infrastructure", path: "/industries/infrastructure" },
-        { name: "Civil Works", path: "/industries/civil" }
+        { name: "Roofing", path: "/roofing" },
+        { name: "Painting", path: "/painting" },
+        { name: "Masonry", path: "/masonry" },
+        { name: "Structure Steel", path: "/structure-steel" },
+        { name: "Landscaping", path: "/landscaping" },
+        { name: "Demolition", path: "/demolition" }
+      ]
+    },
+    {
+      title: "Specialized Services",
+      links: [
+        { name: "Interior Finishes", path: "/interior-finishes" },
+        { name: "Insulation", path: "/insulation" },
+        { name: "Finishes", path: "/finishes" },
+        { name: "Furnishing", path: "/furnishing" },
+        { name: "Manufacturers", path: "/manufacturers" }
       ]
     },
     {
       title: "Company",
       links: [
+        { name: "Home", path: "/" },
         { name: "About Us", path: "/about" },
-        { name: "Our Projects", path: "/projects" },
-        { name: "Contact Us", path: "/contact" },
-        { name: "Sample Estimates", path: "/samples" },
-        { name: "Client Reviews", path: "/reviews" },
-        { name: "Get Quote", path: "/quote" }
+        { name: "Contact Us", path: "/contact" }
       ]
     }
   ];
@@ -78,19 +82,22 @@ const Footer = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8"
         >
           {/* Company Info */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <Link to="/">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent mb-4 cursor-pointer"
+                className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent mb-4 cursor-pointer"
               >
-                Digital Estimating®
+                FAZICS®
               </motion.div>
             </Link>
-           
+            
+            <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+              Professional construction estimation services powered by precision and innovation.
+            </p>
             
             {/* Contact Info */}
             <div className="space-y-3">
@@ -102,7 +109,7 @@ const Footer = () => {
                 <div className="bg-orange-500/20 p-2 rounded-lg mr-3 group-hover:bg-orange-500/30 transition-colors">
                   <Phone className="h-4 w-4 text-orange-400" />
                 </div>
-                <span className="group-hover:text-orange-300 transition-colors">+1 (281) 899-0989</span>
+                <span className="text-sm group-hover:text-orange-300 transition-colors">+1 (281) 899-0989</span>
               </motion.a>
               
               <motion.a
@@ -113,7 +120,7 @@ const Footer = () => {
                 <div className="bg-orange-500/20 p-2 rounded-lg mr-3 group-hover:bg-orange-500/30 transition-colors">
                   <Mail className="h-4 w-4 text-orange-400" />
                 </div>
-                <span className="group-hover:text-orange-300 transition-colors">info@digitalestimating.com</span>
+                <span className="text-sm group-hover:text-orange-300 transition-colors">info@digitalestimating.com</span>
               </motion.a>
               
               <motion.div
@@ -123,11 +130,9 @@ const Footer = () => {
                 <div className="bg-orange-500/20 p-2 rounded-lg mr-3 group-hover:bg-orange-500/30 transition-colors">
                   <MapPin className="h-4 w-4 text-orange-400" />
                 </div>
-                <span className="group-hover:text-orange-300 transition-colors">USA Nationwide Service</span>
+                <span className="text-sm group-hover:text-orange-300 transition-colors">USA Nationwide Service</span>
               </motion.div>
             </div>
-
-           
           </motion.div>
 
           {/* Footer Sections */}
@@ -139,7 +144,7 @@ const Footer = () => {
                   <li key={linkIndex}>
                     <Link 
                       to={link.path}
-                      className="text-gray-300 hover:text-orange-400 transition-colors group flex items-center"
+                      className="text-gray-300 hover:text-orange-400 transition-colors group flex items-center text-sm"
                     >
                       <ArrowRight className="h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200" />
                       <span className="group-hover:translate-x-1 transition-transform duration-200">
@@ -153,32 +158,8 @@ const Footer = () => {
           ))}
         </motion.div>
 
-       
-
         {/* Bottom Bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="border-t border-white/20 mt-12 pt-8"
-        >
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-300 mb-2 md:mb-0">
-              © 2024 Digital Estimating®. All rights reserved.
-            </div>
-            <div className="flex space-x-6">
-              <Link to="/privacy" className="text-gray-300 hover:text-orange-400 transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms" className="text-gray-300 hover:text-orange-400 transition-colors">
-                Terms of Service
-              </Link>
-              <Link to="/sitemap" className="text-gray-300 hover:text-orange-400 transition-colors">
-                Sitemap
-              </Link>
-            </div>
-          </div>
-        </motion.div>
+        
       </div>
     </footer>
   );

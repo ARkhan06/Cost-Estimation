@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Star, CheckCircle, Users, Award, Clock, Shield, ArrowRight, Calculator, FileText, Building, TrendingUp, Target, Zap } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Homepage = () => {
   const heroRef = useRef(null);
   const statsRef = useRef(null);
   const servicesRef = useRef(null);
-  
+  const location = useLocation();
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
 
@@ -415,12 +416,12 @@ const Homepage = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to='/contact'>
                 <button className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 transition-all hover:scale-105">
-                  Get Free Consultation
+                  Contact Us
                 </button>
-                <button className="border-2 border-gray-400 text-gray-300 px-8 py-3 rounded-lg font-semibold hover:border-orange-500 hover:text-orange-500 transition-colors">
-                  Call: (555) 123-4567
-                </button>
+                </Link>
+               
               </div>
             </motion.div>
           </div>

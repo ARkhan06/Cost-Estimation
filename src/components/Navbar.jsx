@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react';
-
+import Fazics from '../assets/Fazics Cost Sol Logo.png';
 // Navbar Component
 const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -41,7 +41,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100">
+    <nav className="bg-white shadow-lg fixed w-full top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -52,7 +52,7 @@ const Navbar = () => {
                 animate={{ opacity: 1, x: 0 }}
                 className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-blue-900 bg-clip-text text-transparent cursor-pointer"
               >
-                Digital Estimating®
+                FAZICS®
               </motion.div>
             </Link>
           </div>

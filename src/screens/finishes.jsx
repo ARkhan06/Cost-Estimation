@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, CheckCircle, ArrowRight, Hammer, Home, Building, Calculator, Clock, Users, Target, Square, Shield } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const FinishesPage = () => {
+  const location = useLocation();
   const services = [
     {
       icon: <Square className="w-8 h-8" />,
@@ -76,27 +78,7 @@ const FinishesPage = () => {
               Professional finish carpentry estimation services for trim work, custom cabinetry, and architectural millwork. Our skilled estimators provide accurate cost analysis for baseboards, crown molding, built-ins, and specialty carpentry using cutting-edge technology and industry expertise.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all flex items-center gap-2"
-              >
-                Request Sample Estimate
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-              
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-white hover:text-orange-300 transition-colors font-medium"
-              >
-                <div className="bg-white/10 p-2 rounded-full">
-                  <Phone className="w-5 h-5" />
-                </div>
-                Have Questions? +1 (281) 899-0989
-              </motion.a>
-            </div>
+            
           </motion.div>
         </div>
       </section>
@@ -193,7 +175,7 @@ const FinishesPage = () => {
         </div>
       </section>
 
-      {/* Why Choose Digital Estimating Section */}
+      {/* Why Choose FAZICS Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -241,7 +223,7 @@ const FinishesPage = () => {
                   Our carpentry takeoff covers all elements including trim materials, hardware, fasteners, adhesives, finishes, labor costs, and installation time with precise calculations using advanced estimation software and industry best practices for accurate project planning.
                 </p>
                 <p>
-                  We differentiate ourselves through cutting-edge technologies, experienced finish carpenters, and commitment to accuracy and transparency. Digital Estimating values client service and produces detailed, itemized finish carpentry estimates with craftsmanship expertise and quality standards.
+                  We differentiate ourselves through cutting-edge technologies, experienced finish carpenters, and commitment to accuracy and transparency. FAZICS values client service and produces detailed, itemized finish carpentry estimates with craftsmanship expertise and quality standards.
                 </p>
               </div>
             </motion.div>
@@ -264,21 +246,11 @@ const FinishesPage = () => {
               Our finish carpentry estimators are skilled at cost evaluation and provide precise estimates accounting for all project factors. Get transparent, detailed breakdowns with no hidden fees or unexpected expenses for confident bidding.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all"
-              >
-                Start Your Project
-              </motion.button>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:+12818990989"
-                className="flex items-center gap-3 text-gray-700 hover:text-orange-500 transition-colors font-medium"
-              >
-                <Phone className="w-5 h-5" />
-                +1 (281) 899-0989
-              </motion.a>
+              <Link to='/contact'>
+                <button className="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 transition-all hover:scale-105">
+                  Contact Us
+                </button>
+                </Link>
             </div>
           </motion.div>
         </div>

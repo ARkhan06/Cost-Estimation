@@ -72,7 +72,7 @@ const ContactUsPage = () => {
               </span>
               <br />
               <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
-                Digital Estimating
+                FAZICS
               </span>
             </h1>
             
