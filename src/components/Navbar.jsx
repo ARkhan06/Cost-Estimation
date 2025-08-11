@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react';
-import Fazics from '../assets/Fazics Cost Sol Logo.png';
+import Fazics from '../assets/Fazics_Cost_Sol_Logo-removebg-preview.png';
 // Navbar Component
 const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -47,13 +47,13 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/">
-              <motion.div 
+              <motion.img 
+                src={Fazics}
+                alt="FAZICS Logo"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-blue-900 bg-clip-text text-transparent cursor-pointer"
-              >
-                FAZICS®
-              </motion.div>
+                className="h-30 w-auto cursor-pointer"
+              />
             </Link>
           </div>
 
