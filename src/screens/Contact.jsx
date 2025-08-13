@@ -261,7 +261,7 @@ const ContactUsPage = () => {
                   )}
                   <ReCAPTCHA
                     ref={recaptchaRef}
-                    sitekey="6Lei7KQrAAAAAP41wgSLeHPQtb8mXr-KgqtwBwem" 
+                    sitekey="6Lda-KQrAAAAAPxfAOBKpLw6SA3DXaThyc3P4Bj3" 
                     onChange={handleRecaptchaChange}
                     onError={handleRecaptchaError}
                     onExpired={() => setCaptchaValue(null)}
