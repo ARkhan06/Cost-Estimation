@@ -261,7 +261,7 @@ const ContactUsPage = () => {
                   )}
                   <ReCAPTCHA
                     ref={recaptchaRef}
-                    sitekey="6Lda-KQrAAAAAPxfAOBKpLw6SA3DXaThyc3P4Bj3" 
+                    sitekey="6LeO-6QrAAAAAExsQ7c6KXRl2fY28ZZFHAMcntS7" 
                     onChange={handleRecaptchaChange}
                     onError={handleRecaptchaError}
                     onExpired={() => setCaptchaValue(null)}
@@ -332,14 +332,13 @@ const ContactUsPage = () => {
                 </div>
               </div>
 
-              {/* Quick Stats */}
+           
               
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
       
     </div>
   );
