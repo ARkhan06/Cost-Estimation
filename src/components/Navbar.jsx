@@ -35,8 +35,8 @@ const Navbar = () => {
       { name: 'Commercial Bids Estimates', path: '/commercial-bids' },
       { name: 'Residential Bids Estimates', path: '/residential-bids' }
     ],
-    'Manufacturers': [
-      {name: 'Manufacturers', path:'/manufacturers'}
+    'Specialized Services': [
+      {name: 'Specialized Services', path:'/specialized-services'},
     ]
   };
 
@@ -58,9 +58,8 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          
-          <div className="hidden lg:flex items-center space-x-10 mr-20">
-               <div 
+          <div className="hidden lg:flex items-center space-x-10 ">
+            <div 
               className="relative"
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
@@ -82,7 +81,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-[900px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-[900px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden ml-8"
                   >
                     <div className="flex h-[400px]">
                       {/* Left Panel - Categories (Static) */}
@@ -161,6 +160,7 @@ const Navbar = () => {
                 )}
               </AnimatePresence>
             </div>
+            
             <Link 
               to="/" 
               className={`font-medium transition-colors ${
@@ -178,10 +178,6 @@ const Navbar = () => {
               About
             </Link>
             
-            {/* Services Dropdown */}
-         
-
-           
             <Link 
               to="/contact" 
               className={`font-medium transition-colors ${
@@ -190,8 +186,14 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            
-            
+            <Link 
+              to="/how-it-works" 
+              className={`font-medium transition-colors ${
+                location.pathname === '/how-it-works' ? 'text-orange-500' : 'text-gray-700 hover:text-orange-500'
+              }`}
+            >
+              How We Work
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -312,6 +314,18 @@ const Navbar = () => {
                   }`}
                 >
                   Contact
+                </Link>
+                
+                <Link 
+                  to="/how-it-works" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block px-4 py-3 rounded-lg transition-all ${
+                    location.pathname === '/how-it-works' 
+                      ? 'text-orange-500 bg-orange-50' 
+                      : 'text-gray-700 hover:text-orange-500 hover:bg-white'
+                  }`}
+                >
+                  How We Work
                 </Link>
                 
                 

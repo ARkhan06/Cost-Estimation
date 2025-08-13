@@ -62,8 +62,8 @@ const CommercialBidsPage = () => {
       description: "Early-stage cost assessments for project planning and feasibility analysis."
     },
     {
-      title: "Bid Preparation Services",
-      description: "Complete bid package preparation with detailed cost breakdowns and specifications."
+      title: "Bid-Ready Cost Estimates",
+      description: "Accurate, detailed cost estimates tailored to strengthen your bid submissions."
     },
     {
       title: "Material Takeoffs",

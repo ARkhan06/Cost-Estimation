@@ -26,6 +26,7 @@ import About from './screens/About.jsx';
 import ManufacturersPage from './screens/Manufacturers.jsx';
 import Contact from './screens/Contact.jsx';
 import Footer from './components/Footer';
+import HowWork from './screens/HowWorks.jsx';
 import './App.css';
 const App = () => {
   return (
@@ -59,9 +60,12 @@ const App = () => {
             <Route path="/public-bids" element={<PBE />} />
             <Route path="/commercial-bids" element={<CBE />} />
             <Route path="/residential-bids" element={<RBE />} />
-            <Route path="/manufacturers" element={<ManufacturersPage />} />
+            <Route path="/specialized-services" element={<ManufacturersPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/how-it-works" element={<HowWork />} />
+            
+            {/* Placeholder for future projects page */}
             <Route path="/projects" element={
               <div className="min-h-screen flex items-center justify-center">
                 <h1 className="text-4xl">Projects Page Coming Soon</h1>

@@ -11,17 +11,17 @@ const PublicBidsPage = () => {
     {
       icon: <Building className="w-8 h-8" />,
       title: "Government Projects",
-      description: "Infrastructure, municipal buildings, and community development projects with precise cost estimation."
+      description: "Infrastructure, municipal, and community development projects with precise cost estimates based on drawings and specifications."
     },
     {
       icon: <FileText className="w-8 h-8" />,
       title: "Bid Documentation", 
-      description: "Complete bid package preparation including detailed cost breakdowns and project specifications."
+      description: "Cost documentation only: detailed cost breakdowns, pricing schedules, and quantity takeoffs to support your bid package. (We do not prepare legal or submission documents."
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "Competitive Analysis",
-      description: "Strategic bidding support to help you win more public sector contracts profitably."
+      description: "Cost-based competitive analysis — benchmarking your estimates against market and historical project costs to inform competitive pricing.."
     }
   ];
 
@@ -105,10 +105,9 @@ const PublicBidsPage = () => {
             </h1>
             
             <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
-              Our public bids estimates are not just numbers but blueprints for your public project success. We bring a digital edge to government sector cost estimation with unparalleled accuracy and transparency.
+              Our public-bid cost estimates provide clear, itemized figures based on your architectural and engineering drawings. We deliver accurate, transparent, and compliance-ready estimates to support project planning and tender responses.
             </p>
-            
-           
+
           </motion.div>
         </div>
       </section>
