@@ -52,7 +52,7 @@ const FlooringPage = () => {
       <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-20 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-black/80"></div>
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-50"
+          className="absolute inset-0 bg-cover bg-center opacity-80"
           style={{
             backgroundImage: "url('https://media.istockphoto.com/id/638727076/photo/installing-wood-flooring.jpg?s=612x612&w=0&k=20&c=l4wcPVlfJ42CbR5U1OYgMdq1wW3HJtqABtz2MepeMpY=')"
           }}

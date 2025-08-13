@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Star, CheckCircle, Users, Award, Clock, Shield, ArrowRight, Calculator, FileText, Building, TrendingUp, Target, Zap } from 'lucide-react';
+import { Star, CheckCircle, Users, Award, Clock, Shield, ArrowRight, Calculator, FileText, Building, TrendingUp, Target, Zap,Phone } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import HomePic from '../assets/build-it-estimating-service.jpg';
 
 const Homepage = () => {
   const heroRef = useRef(null);
@@ -13,12 +14,12 @@ const Homepage = () => {
 
   const stats = [
     { 
-      number: "850+", 
+      number: "350+", 
       label: "Projects Completed", 
       icon: <FileText className="h-6 w-6" />
     },
     { 
-      number: "8+", 
+      number: "6+", 
       label: "Years Experience", 
       icon: <Award className="h-6 w-6" />
     },
@@ -127,10 +128,10 @@ const Homepage = () => {
         {/* Enhanced Hero Section */}
       <section className="relative min-h-screen bg-gray-900 text-white overflow-hidden">
       {/* Background Image */}
-      <div 
+       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"
+          backgroundImage: `url(${HomePic})`
         }}
       ></div>
       
@@ -146,8 +147,8 @@ const Homepage = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold mb-2 leading-tight -mt-5"
           >
-            <span className="text-white">Precision Meets</span>
-            <div className="text-orange-500 -mt-4">Innovation</div>
+            <span className="text-white">Precision in Every</span>
+            <div className="text-orange-500 -mt-4">Estimate</div>
           </motion.h1>
           
           <motion.p 
@@ -156,10 +157,37 @@ const Homepage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl mb-2 leading-relaxed text-gray-200 max-w-3xl"
           >
-            Transform your construction bidding with AI-powered cost estimates. Our certified professionals deliver accuracy, speed, and competitive advantage for every project.
+            We provide detailed and reliable construction cost estimates for projects of all sizes. Our process ensures accuracy, clarity, and timely delivery, helping you plan with confidence.
           </motion.p>
-          
-          
+            <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="flex flex-col sm:flex-row gap-4"
+    >
+      {/* Contact Us Button */}
+      <Link to="/contact">
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg hover:shadow-orange-500/25 transition-all flex items-center group"
+        >
+          Contact Us
+          <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+        </motion.button>
+      </Link>
+
+      {/* Call Button */}
+      <motion.a
+        href="tel:+15716856388"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all flex items-center group"
+      >
+        <Phone className="mr-2 h-5 w-5 group-hover:animate-pulse" />
+        +1-571-685-6388
+          </motion.a>
+          </motion.div>
         </div>
       </div>
     </section>

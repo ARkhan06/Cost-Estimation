@@ -1,37 +1,124 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock, ArrowRight, Send, User, MessageSquare } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactUsPage = () => {
+  const form = useRef();
+  const recaptchaRef = useRef(null);
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     description: ''
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [captchaValue, setCaptchaValue] = useState(null);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
+
+  // Check if reCAPTCHA script is loaded properly
+  useEffect(() => {
+    const checkRecaptchaLoaded = () => {
+      if (window.grecaptcha && window.grecaptcha.ready) {
+        setRecaptchaLoaded(true);
+      }
+    };
+
+    checkRecaptchaLoaded();
+    const intervalId = setInterval(checkRecaptchaLoaded, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleRecaptchaChange = (value) => {
+    setCaptchaValue(value);
+    console.log("reCAPTCHA value:", value);
+  };
+
+  const handleRecaptchaError = () => {
+    console.error("reCAPTCHA failed to load or encountered an error");
+    setSubmitStatus({ 
+      type: 'error', 
+      message: 'There was a problem loading the reCAPTCHA. Please refresh the page and try again.'
     });
   };
 
-  const handleSubmit = () => {
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Additional validation for reCAPTCHA
+    if (!captchaValue) {
+      setSubmitStatus({ type: 'error', message: 'Please complete the reCAPTCHA verification' });
+      return;
+    }
+    
+    setIsSubmitting(true);
+    setSubmitStatus({ type: '', message: '' });
+
+    try {
+      // Add the captcha value to the form data
+      const formElement = form.current;
+      const captchaInput = document.createElement('input');
+      captchaInput.type = 'hidden';
+      captchaInput.name = 'g-recaptcha-response';
+      captchaInput.value = captchaValue;
+      formElement.appendChild(captchaInput);
+
+      // Replace these with your actual EmailJS credentials
+      await emailjs.sendForm(
+        'service_v0vgkda',
+        'template_gmsyssu',
+        formElement,
+        'lVBseVkcxWJ9xjipE'
+      );
+
+      // Remove the temporary input element
+      formElement.removeChild(captchaInput);
+
+      setSubmitStatus({
+        type: 'success',
+        message: 'Message sent successfully! We will get back to you soon.'
+      });
+      
+      // Reset form and captcha
+      setFormData({ name: '', email: '', description: '' });
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
+      setCaptchaValue(null);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again or contact us directly.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: <Phone className="w-8 h-8" />,
       title: "Phone Number",
-      info: "+1 (281) 899-0989",
+      info: "+1-571-685-6388",
       description: "Available Monday - Friday, 8:00 AM - 6:00 PM CST"
     },
     {
       icon: <Mail className="w-8 h-8" />,
       title: "Email Address",
-      info: "info@digitalestimating.com",
+      info: "info@fazics.com",
       description: "Get response within 24 hours"
     },
     {
@@ -42,9 +129,9 @@ const ContactUsPage = () => {
     },
     {
       icon: <Clock className="w-8 h-8" />,
-      title: "Business Hours",
-      info: "Mon - Fri: 8:00 AM - 6:00 PM",
-      description: "Saturday: 9:00 AM - 2:00 PM CST"
+      title: "Business Days",
+      info: "Mon - Sunday",
+      description: ""
     }
   ];
 
@@ -116,7 +203,7 @@ const ContactUsPage = () => {
                 <p className="text-gray-600">Fill out the form below and we'll get back to you within 24 hours.</p>
               </div>
 
-              <div className="space-y-6">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <div className="block text-sm font-semibold text-gray-700 mb-2">
                     <User className="w-4 h-4 inline mr-2" />
@@ -127,6 +214,7 @@ const ContactUsPage = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
                     placeholder="Enter your full name"
                   />
@@ -142,6 +230,7 @@ const ContactUsPage = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
                     placeholder="Enter your email address"
                   />
@@ -156,39 +245,54 @@ const ContactUsPage = () => {
                     name="description"
                     value={formData.description}
                     onChange={handleInputChange}
+                    required
                     rows={5}
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
                     placeholder="Tell us about your project, timeline, and any specific requirements..."
                   />
                 </div>
 
-                {/* reCAPTCHA Placeholder */}
-                <div className="bg-gray-100 border border-gray-300 rounded-lg p-4 flex items-center justify-center">
-                  <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 border-2 border-gray-400 rounded bg-white"></div>
-                    <span className="text-gray-600">I'm not a robot</span>
-                    <div className="ml-auto">
-                      <div className="text-xs text-gray-500">reCAPTCHA</div>
-                      <div className="flex gap-1">
-                        <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                      </div>
-                    </div>
-                  </div>
+                {/* reCAPTCHA */}
+                <div className="recaptcha-container">
+                  {!recaptchaLoaded && (
+                    <p className="text-amber-600 text-sm mb-2">
+                      Loading reCAPTCHA verification...
+                    </p>
+                  )}
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey="6Lei7KQrAAAAAP41wgSLeHPQtb8mXr-KgqtwBwem" 
+                    onChange={handleRecaptchaChange}
+                    onError={handleRecaptchaError}
+                    onExpired={() => setCaptchaValue(null)}
+                  />
                 </div>
 
+                {submitStatus.message && (
+                  <div className={`p-4 rounded-xl ${
+                    submitStatus.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+                  }`}>
+                    {submitStatus.message}
+                  </div>
+                )}
+
                 <motion.button
+                  type="submit"
+                  disabled={isSubmitting || !captchaValue}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={handleSubmit}
-                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
-                  <Send className="w-5 h-5" />
+                  {isSubmitting ? (
+                    'Sending...'
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="w-5 h-5" />
+                    </>
+                  )}
                 </motion.button>
-              </div>
+              </form>
             </motion.div>
 
             {/* Contact Information */}
