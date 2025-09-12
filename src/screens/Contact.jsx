@@ -124,7 +124,7 @@ const ContactUsPage = () => {
     {
       icon: <MapPin className="w-8 h-8" />,
       title: "Office Location",
-      info: "Houston, Texas, USA",
+      info: "Washington DC, USA",
       description: "Serving contractors nationwide"
     },
     {
