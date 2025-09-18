@@ -7,7 +7,7 @@ const AboutCompanyPage = () => {
   const leadership = [
     {
       icon: <Users className="w-8 h-8" />,
-      name: "Abdullah Khan",
+      name: "Jace Carter",
       title: "Founder | CEO & Chairman",
       message: "We founded FAZICS with a clear mission: to streamline and revolutionize the construction estimation process through cutting-edge technology and expert knowledge. For too long, the industry has relied on outdated methods that are time-consuming, error-prone, and often lead to costly overruns.",
       vision: "Join us as we redefine the future of construction estimation."
