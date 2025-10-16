@@ -112,7 +112,7 @@ const ContactUsPage = () => {
     {
       icon: <Phone className="w-8 h-8" />,
       title: "Phone Number",
-      info: "+1-571-685-6388",
+      info: "+1-888-347-1670",
       description: "Available Monday - Friday, 8:00 AM - 6:00 PM CST"
     },
     {

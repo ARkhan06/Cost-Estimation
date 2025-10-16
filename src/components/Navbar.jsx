@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react';
-import Fazics from '../assets/Fazics_Cost_Sol_Logo-removebg-preview.png';
+import Fazics from '../assets/FAZICS_Estimating_Solutions_Logo-removebg-preview.png';
 // Navbar Component
 const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
