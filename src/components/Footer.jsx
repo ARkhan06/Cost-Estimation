@@ -99,7 +99,7 @@ const Footer = () => {
                 <div className="bg-orange-500/20 p-2 rounded-lg mr-3 group-hover:bg-orange-500/30 transition-colors">
                   <Phone className="h-4 w-4 text-orange-400" />
                 </div>
-                <span className="text-sm group-hover:text-orange-300 transition-colors">+1-571-685-6388</span>
+                <span className="text-sm group-hover:text-orange-300 transition-colors">+1-888-347-1670</span>
               </motion.a>
               
               <motion.a

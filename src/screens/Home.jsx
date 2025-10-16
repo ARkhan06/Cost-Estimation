@@ -185,8 +185,7 @@ const Homepage = () => {
         className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all flex items-center group"
       >
         <Phone className="mr-2 h-5 w-5 group-hover:animate-pulse" />
-        +1-571-685-6388
-          </motion.a>
+        +1-888-347-1670          </motion.a>
           </motion.div>
         </div>
       </div>
